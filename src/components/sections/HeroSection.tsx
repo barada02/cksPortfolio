@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import Button from '../common/Button';
@@ -85,7 +86,10 @@ const BackgroundGradient = styled.div`
 `;
 
 const HeroSection = () => {
-  const nameText = "Hi, I am Chandan Kumar";
+  const initialText = "Hi, I am Kumar";
+  const finalText = "Hi, I am Chandan Kumar";
+  const controls = useAnimation();
+  const [currentText, setCurrentText] = React.useState(initialText);
   
   const container = {
     hidden: { opacity: 0 },
@@ -95,10 +99,24 @@ const HeroSection = () => {
         staggerChildren: 0.08,
         delayChildren: 0.3
       }
+    },
+    disappear: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        staggerDirection: -1, // Reverse stagger direction
+        delayChildren: 1.5 // Wait before starting to disappear
+      }
+    },
+    appear: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 1.0 // Wait before starting to appear
+      }
     }
   };
-  
-  const child = {
+    const child = {
     hidden: { 
       opacity: 0, 
       y: 20,
@@ -113,8 +131,47 @@ const HeroSection = () => {
         damping: 12,
         stiffness: 100
       }
-    }
+    },
+    disappear: (index) => ({
+      opacity: index < 9 ? 1 : 0, // Keep "Hi, I am " visible
+      y: index < 9 ? 0 : 20,
+      rotateY: index < 9 ? 0 : 90,
+      transition: { 
+        type: "spring",
+        damping: 12,
+        stiffness: 100
+      }    })
   };
+
+  useEffect(() => {
+    const animationSequence = async () => {
+      // First show the full text (Hi, I am Kumar)
+      await controls.start("visible");
+      
+      // Wait for 2 seconds before starting reverse animation
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Then do the disappearing animation for "Kumar"
+      await controls.start("disappear");
+      
+      // Wait for 1 second with just "Hi, I am" showing
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Change the text to the final version
+      setCurrentText(finalText);
+      
+      // Reset the animation state to hidden for the new characters
+      await controls.start("hidden");
+      
+      // Animate in the full "Hi, I am Chandan Kumar" text
+      await controls.start("visible");
+    };
+    
+    animationSequence();
+    
+    animationSequence();
+  }, [controls, finalText]);
+  
   return (
     <HeroContainer id="home">
       <BackgroundGradient />
@@ -128,17 +185,16 @@ const HeroSection = () => {
           Welcome to my portfolio
         </Greeting>
         
-        <NameContainer>
-          <motion.div
+        <NameContainer>          <motion.div
             variants={container}
             initial="hidden"
-            animate="visible"
+            animate={controls}
           >
-            {nameText.split('').map((char, index) => (
+            {currentText.split('').map((char, index) => (
               <AnimatedCharacter
                 key={index}
-                variants={child}
-                style={{
+                custom={index} // Pass index as custom prop
+                variants={child}                style={{
                   color: index >= 9 ? theme.colors.primary : theme.colors.text,
                   display: char === ' ' ? 'inline-block' : 'inline-block',
                   width: char === ' ' ? '0.5em' : 'auto'
