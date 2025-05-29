@@ -157,15 +157,15 @@ const HeroSection = () => {
     const animationSequence = async () => {
       // First show the full text (Hi, I am Kumar)
       await controls.start("visible");
-      
-      // Wait for 2 seconds before starting reverse animation
-      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // Wait for 1 second before starting reverse animation
+      await new Promise(resolve => setTimeout(resolve, 800));
       
       // Then do the disappearing animation for "Kumar"
       await controls.start("disappear");
       
       // Wait for 1 second with just "Hi, I am" showing
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 600));
       
       // Change the text to the final version
       setCurrentText(finalText);
