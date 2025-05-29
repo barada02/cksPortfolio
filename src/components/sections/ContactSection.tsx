@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
@@ -158,11 +159,10 @@ const ContactSection = () => {
     subject: '',
     message: ''
   });
-  
-  const [status, setStatus] = useState({
+    const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info: { error: false, msg: null }
+    info: { error: false, msg: '' as string | null }
   });
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -172,14 +172,13 @@ const ContactSection = () => {
       [name]: value
     }));
   };
-  
-  const handleSubmit = async (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
     
     try {
       // Replace with your actual EmailJS service, template, and user IDs
-      const result = await emailjs.send(
+      await emailjs.send(
         'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
         {

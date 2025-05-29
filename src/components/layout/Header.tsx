@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const HeaderContainer = styled.header`
+interface HeaderContainerProps {
+  scrolled: boolean;
+}
+
+const HeaderContainer = styled.header<HeaderContainerProps>`
   position: fixed;
   top: 0;
   left: 0;

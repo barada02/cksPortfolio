@@ -86,7 +86,6 @@ const BackgroundGradient = styled.div`
 
 const HeroSection = () => {
   const nameText = "Hi, I am Chandan Kumar";
-  const fullName = "Chandan Kumar Barada";
   
   const container = {
     hidden: { opacity: 0 },

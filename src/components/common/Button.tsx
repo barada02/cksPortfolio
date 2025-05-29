@@ -12,6 +12,7 @@ interface ButtonProps {
   href?: string;
   target?: string;
   rel?: string;
+  disabled?: boolean;
 }
 
 const StyledButton = styled.button<{
