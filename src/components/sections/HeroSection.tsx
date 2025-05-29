@@ -90,8 +90,7 @@ const HeroSection = () => {
   const finalText = "Hi, I am Chandan Kumar";
   const controls = useAnimation();
   const [currentText, setCurrentText] = React.useState(initialText);
-  
-  const container = {
+    const container = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -112,11 +111,11 @@ const HeroSection = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.08,
-        delayChildren: 1.0 // Wait before starting to appear
+        delayChildren: 0.5 // Shorter delay before starting to appear
       }
     }
   };
-    const child = {
+  const child = {
     hidden: { 
       opacity: 0, 
       y: 20,
@@ -132,7 +131,7 @@ const HeroSection = () => {
         stiffness: 100
       }
     },
-    disappear: (index) => ({
+    disappear: (index: number) => ({
       opacity: index < 9 ? 1 : 0, // Keep "Hi, I am " visible
       y: index < 9 ? 0 : 20,
       rotateY: index < 9 ? 0 : 90,
@@ -140,9 +139,20 @@ const HeroSection = () => {
         type: "spring",
         damping: 12,
         stiffness: 100
-      }    })
+      }
+    }),
+    appear: (index: number) => ({
+      opacity: index >= 9 ? 1 : 1, // Only animate new characters
+      y: index >= 9 ? 0 : 0,
+      rotateY: index >= 9 ? 0 : 0,
+      transition: { 
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+        delay: index >= 9 ? (index - 9) * 0.08 : 0 // Stagger only the new characters
+      }
+    })
   };
-
   useEffect(() => {
     const animationSequence = async () => {
       // First show the full text (Hi, I am Kumar)
@@ -160,14 +170,12 @@ const HeroSection = () => {
       // Change the text to the final version
       setCurrentText(finalText);
       
-      // Reset the animation state to hidden for the new characters
-      await controls.start("hidden");
+      // Wait a brief moment for React to update the DOM
+      await new Promise(resolve => setTimeout(resolve, 50));
       
-      // Animate in the full "Hi, I am Chandan Kumar" text
-      await controls.start("visible");
+      // Use the appear variant for the new characters
+      await controls.start("appear");
     };
-    
-    animationSequence();
     
     animationSequence();
   }, [controls, finalText]);
@@ -185,7 +193,8 @@ const HeroSection = () => {
           Welcome to my portfolio
         </Greeting>
         
-        <NameContainer>          <motion.div
+        <NameContainer>
+          <motion.div
             variants={container}
             initial="hidden"
             animate={controls}
@@ -194,7 +203,8 @@ const HeroSection = () => {
               <AnimatedCharacter
                 key={index}
                 custom={index} // Pass index as custom prop
-                variants={child}                style={{
+                variants={child}
+                style={{
                   color: index >= 9 ? theme.colors.primary : theme.colors.text,
                   display: char === ' ' ? 'inline-block' : 'inline-block',
                   width: char === ' ' ? '0.5em' : 'auto'
