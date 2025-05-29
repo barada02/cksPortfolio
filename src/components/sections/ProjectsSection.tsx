@@ -7,7 +7,6 @@ import Button from '../common/Button';
 import { staggerContainer, staggerItem } from '../../animations/variants';
 import { FaGithub } from 'react-icons/fa';
 import { projects } from '../../data/projectData';
-import type { Project } from '../../data/projectData';
 
 const ProjectsContainer = styled.div`
   display: flex;
