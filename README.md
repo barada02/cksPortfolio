@@ -6,7 +6,7 @@ A modern, responsive portfolio website built with React, TypeScript, and styled-
 
 ## 🚀 Live Demo
 
-[View the live portfolio](https://your-portfolio-url.com)
+[View the live portfolio](https://barada02.github.io/cksPortfolio)
 
 ## ✨ Features
 
@@ -67,6 +67,17 @@ src/
    ```bash
    npm run build
    ```
+
+## 🚀 Deployment
+
+This project is configured for deployment on GitHub Pages. For detailed instructions, see the [DEPLOYMENT.md](DEPLOYMENT.md) file.
+
+Quick deployment steps:
+```bash
+npm run deploy
+```
+
+This will build your project and deploy it to the gh-pages branch of your GitHub repository.
 
 ## 📱 Responsive Design
 
