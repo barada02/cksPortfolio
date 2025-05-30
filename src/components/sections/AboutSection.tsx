@@ -4,7 +4,7 @@ import { theme } from '../../styles/theme';
 import Section from '../common/Section';
 import SectionTitle from '../common/SectionTitle';
 import { slideInLeft, slideInRight } from '../../animations/variants';
-import Profilepic from '../../assets/5.2.jpg'; // Placeholder for profile image
+import Profilepic from '../../assets/ck1.jpeg'
 
 const AboutContainer = styled.div`
   display: grid;

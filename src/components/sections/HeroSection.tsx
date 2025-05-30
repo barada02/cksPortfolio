@@ -159,13 +159,13 @@ const HeroSection = () => {
       await controls.start("visible");
 
       // Wait for 1 second before starting reverse animation
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 300));
       
       // Then do the disappearing animation for "Kumar"
       await controls.start("disappear");
       
       // Wait for 1 second with just "Hi, I am" showing
-      await new Promise(resolve => setTimeout(resolve, 600));
+      await new Promise(resolve => setTimeout(resolve, 300));
       
       // Change the text to the final version
       setCurrentText(finalText);
@@ -221,7 +221,7 @@ const HeroSection = () => {
           animate="visible"
           variants={slideInRight}
         >
-          I specialize in React, Flutter, Angular, MERN stack, and Firebase, with a focus on AI, ML, DL, and computer vision. Currently working on LLM-integrated applications.
+          I specialize in AI, ML, DL, and computer vision, with a particular focus on developing LLM-integrated applications. My expertise extends to building robust and scalable solutions using React, Flutter, Angular, MERN stack, and Firebase.
         </Subtitle>
         
         <ButtonContainer
