@@ -11,11 +11,10 @@ export const theme = {
     success: '#4CAF50',
     error: '#F44336',
     warning: '#FFC107',
-  },
-  gradients: {
+  },  gradients: {
     primary: 'linear-gradient(135deg, #7928CA 0%, #FF0080 100%)',
     secondary: 'linear-gradient(135deg, #4D9DE0 0%, #7928CA 100%)',
-    dark: 'linear-gradient(135deg, #121212 0%, #1E1E1E 100%)',
+    dark: '#000000',
   },
   fonts: {
     main: "'Poppins', sans-serif",

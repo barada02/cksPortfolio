@@ -4,6 +4,7 @@ import { theme } from '../../styles/theme';
 import Section from '../common/Section';
 import SectionTitle from '../common/SectionTitle';
 import { slideInLeft, slideInRight } from '../../animations/variants';
+import Profilepic from '../../assets/5.2.jpg'; // Placeholder for profile image
 
 const AboutContainer = styled.div`
   display: grid;
@@ -56,6 +57,8 @@ const ProfileImageContainer = styled(motion.div)`
   position: relative;
   border-radius: ${theme.borderRadius.lg};
   overflow: hidden;
+  margin-top: 10px;
+  margin-left: 80px;
   
   &:before {
     content: '';
@@ -71,7 +74,7 @@ const ProfileImageContainer = styled(motion.div)`
   
   @media (max-width: ${theme.breakpoints.md}) {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 20px auto 0;
   }
 `;
 
@@ -81,10 +84,11 @@ const ProfileImage = styled.img`
   border-radius: ${theme.borderRadius.lg};
   filter: grayscale(20%);
   transition: all ${theme.animations.normal} ease;
+  transform: translateX(10px) translateY(10px);
   
   &:hover {
     filter: grayscale(0%);
-    transform: scale(1.02);
+    transform: translateX(10px) translateY(10px) scale(1.02);
   }
 `;
 
@@ -118,10 +122,9 @@ const AboutInfoItem = styled.div`
 
 const AboutSection = () => {
   // Placeholder for profile image URL
-  const profileImageUrl = "https://via.placeholder.com/500x600";
-  
-  return (
-    <Section id="about">
+  const profileImageUrl = Profilepic; // Replace with actual image path or URL
+    return (
+    <Section id="about" background="dark">
       <SectionTitle 
         title="About Me"
         subtitle="Get to know more about me and my background"
