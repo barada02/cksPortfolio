@@ -120,6 +120,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Developed by Chandan Kumar Barada.
 
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
-- LinkedIn: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-```
+- GitHub: [github.com/barada02](https://github.com/barada02/)
+- LinkedIn: [linkedin.com/in/chandan-kumar-barada-a3971b194](https://linkedin.com/in/chandan-kumar-barada-a3971b194)
