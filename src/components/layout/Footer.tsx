@@ -63,7 +63,7 @@ const Footer = () => {
           <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
             <FaTwitter />
           </SocialIcon>
-          <SocialIcon href="mailto:contact@example.com" aria-label="Email">
+          <SocialIcon href="mailto:chandan001ku@gmail.com" aria-label="Email">
             <FaEnvelope />
           </SocialIcon>
         </SocialLinks>
