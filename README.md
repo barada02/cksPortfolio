@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with React, TypeScript, and styled-
 
 ![Portfolio Screenshot](https://via.placeholder.com/1200x630)
 
-## 🚀 Live Demo
+## 🚀 Live Site
 
 [View the live portfolio](https://barada02.github.io/cksPortfolio)
 
