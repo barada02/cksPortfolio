@@ -231,7 +231,7 @@ const ContactSection = () => {
             </ContactIcon>
             <ContactText>
               <h4>Email</h4>
-              <p><a href="mailto:contact@example.com">contact@example.com</a></p>
+              <p><a href="mailto:chandan001ku@gmail.com">chandan001ku@gmail.com</a></p>
             </ContactText>
           </ContactInfoItem>
           
@@ -251,18 +251,18 @@ const ContactSection = () => {
             </ContactIcon>
             <ContactText>
               <h4>LinkedIn</h4>
-              <p><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin.com/in/chandan-kumar</a></p>
+              <p><a href="https://www.linkedin.com/in/chandan-kumar-barada" target="_blank" rel="noopener noreferrer">linkedin.com/in/chandan-kumar-barada</a></p>
             </ContactText>
           </ContactInfoItem>
           
           <SocialLinks>
-            <SocialLink href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <SocialLink href="https://github.com/barada02" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <FaGithub />
             </SocialLink>
-            <SocialLink href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <SocialLink href="https://www.linkedin.com/in/chandan-kumar-barada" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
             </SocialLink>
-            <SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <SocialLink href="https://twitter.com/chandankumar" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <FaTwitter />
             </SocialLink>
           </SocialLinks>

@@ -156,7 +156,7 @@ const AboutSection = () => {
             </AboutInfoItem>
             <AboutInfoItem>
               <h4>Email</h4>
-              <p>contact@example.com</p>
+              <p>chandan001ku@gmail.com</p>
             </AboutInfoItem>
             <AboutInfoItem>
               <h4>Education</h4>
