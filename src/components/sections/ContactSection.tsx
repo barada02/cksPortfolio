@@ -251,7 +251,7 @@ const ContactSection = () => {
             </ContactIcon>
             <ContactText>
               <h4>LinkedIn</h4>
-              <p><a href="https://www.linkedin.com/in/chandan-kumar-barada" target="_blank" rel="noopener noreferrer">linkedin.com/in/chandan-kumar-barada</a></p>
+              <p><a href="https://www.linkedin.com/in/chandan-kumar-barada-a3971b194/" target="_blank" rel="noopener noreferrer">linkedin.com/in/chandan-kumar-barada</a></p>
             </ContactText>
           </ContactInfoItem>
           
@@ -259,7 +259,7 @@ const ContactSection = () => {
             <SocialLink href="https://github.com/barada02" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <FaGithub />
             </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/chandan-kumar-barada" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <SocialLink href="https://www.linkedin.com/in/chandan-kumar-barada-a3971b194/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
             </SocialLink>
             <SocialLink href="https://twitter.com/chandankumar" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
