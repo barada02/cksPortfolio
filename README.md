@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and styled-components, showcasing my skills, projects, and professional experience in development and AI/ML.
 
-![Portfolio Screenshot](https://via.placeholder.com/1200x630)
+
 
 ## 🚀 Live Site
 
